@@ -24,3 +24,6 @@
 > "So in real world applications we use client and server => default to server components and use client when needed"
 
 ### All components inside app folder are server components and rendered on the server
+
+
+> Pages router doesn't support server components.
