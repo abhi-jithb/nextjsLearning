@@ -1,34 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#Rendering Environments
+1. Client -> Web Browser => similar to how react applications work
+2. Server => Node.js Runtime 
 
-## Getting Started
+### Client side rendering (CSR)
+- Larger the bundles -> more m/m neeeded on the client to load all these components.
+- Resource Heavy
+- No SEO -> brwsers can't view our content, because they cannot excecute js code, so they cannot render our components 
+- Less Secure -> any sensitive data we have in our components or their dependencies will be exposed to the client (like API key)
 
-First, run the development server:
+### Server side rendering (SSR)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Smaller bundles -> we only sent the essential components to the client and prevent bundle from becoming unnesssarily large.
+- Resource handling -> Server handles most of the rendering we need less resources on the client + Because rendering is  dine on the server and we send the actual content to the client => SEARCH ENGINE bots can view and index our pages.
+- More secure - we can keep sensitive data like API keys on the server.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+###### However with server-side rendering we lose interactivity.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Listen to browser events - like click, change, submit
+- Access browser APIs - like Local storage
+- Maintain state 
+- Use effects
+> "These functionalities are only available in client components."
+> "So in real world applications we use client and server => default to server components and use client when needed"
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### All components inside app folder are server components and rendered on the server
