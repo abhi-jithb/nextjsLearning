@@ -27,3 +27,33 @@
 
 
 > Pages router doesn't support server components.
+
+
+### Data Fetching
+#### on client -  useState() + useEffect()
+
+> Typically use state hook to declare a state variable.
+> Effect Hook => to call the backend, get the data and put into our state variable.
+
+
+##### Problems
+> Large bundles
+> Resource intensive
+> No SEO
+> Less Secure
+> Extra ROund trip  to server - browser downloads- html template, css, js file brom backend and an extra request to fetch data from the backend
+
+
+```
+json place holder => dummy data in our application
+
+(json - a fake api for getting some dummy data)
+```
+
+#### Typescript
+-  auto completetion while coding
+-  when striking errors  => we can cache those errors at build time before we run adn deploy our app
+
+- when ever fetch data it should be done mostly in server component.
+
+### Caching 
