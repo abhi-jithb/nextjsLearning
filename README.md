@@ -1,4 +1,4 @@
-#Rendering Environments
+# Rendering Environments
 1. Client -> Web Browser => similar to how react applications work
 2. Server => Node.js Runtime 
 
